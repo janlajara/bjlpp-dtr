@@ -8,4 +8,4 @@ I've used plain Javascript, HTML and CSS. Its configuration (an Excel file) resi
 
 The live site can be viewed [here](https://www.bjlprintingpress.com/utils/dtr/) but it requires a login using an account belonging to our work organization.
 
-**I've built this quick-and-dirty prototype in the middle of 2020. I might do a complete overhaul of everything when I get the chance.*
+**I've built this quick-and-dirty prototype in the middle of 2020. I might overhaul everything when I get the chance.*
