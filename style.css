@@ -1,0 +1,262 @@
+html, body {
+	margin: 0; 
+	padding: 0;
+	font-family: "Segoe UI Regular";
+}
+@media print{    
+    .no-print, .no-print * {
+        display: none !important;
+    }
+	.show-print /*, .show-print */ {
+		display: inherit !important;
+	}
+	.hide-borders-print {
+		border: none;
+		outline: none;
+	}
+	.font-large-print {
+		font-size: 25;
+	}
+	.header {
+		position: absolute !important;
+	}
+	#content {
+		margin-top: 85px !important;
+	}
+}
+#importForm {
+	display: flex;
+	width: 65%;
+}
+#importForm  > *{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#content {
+	margin-top: 65px;
+}
+#legend ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+.show-print {
+	display: none;
+}
+
+.header{
+	width: 100%;
+	position:fixed;  
+	top: 0;
+	background-color: white;
+	justify-content: space-between;
+}
+.header-item {
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0 15px 0 15px;
+}
+.hide-borders {
+	border: none;
+	outline: none;
+}
+.hide {
+	display: none !important;
+}
+.break {
+  flex-basis: 100%;
+}
+.flex-container {
+  display: flex !important;
+  flex-wrap: wrap;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.justify {
+	justify-content: space-between;
+}
+.title {
+	font-weight: bold;
+}
+.icon {
+	font-size: 1.5em !important;
+	color: #c1c1c1;
+	cursor: pointer;
+}
+.icon-small {
+	font-size: 1em !important;
+	color: #c1c1c1;
+	cursor: pointer;
+}
+.icon:hover {
+	color: #545454;
+}
+.settings-header {
+	justify-content: space-between;
+	margin-top: auto;
+	margin-bottom: auto;
+}	
+.settings-header > * {
+	margin: 0 !important;
+}
+
+
+#headerButtons {
+	display: flex;
+    align-items: center;
+}
+
+#headerButtons > * {
+	padding: 10px;
+}
+
+/* The sidebar menu */
+#settings {
+	height: 100%; /* 100% Full-height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	right: -40px;
+	background: #fbfbfb;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	/*transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+    transition: width 0.5s cubic-bezier(0, 1, 0, 1);
+	border-left: solid;
+    border-width: medium;
+    border-color: #f0f0f0;
+	padding: 20px;
+}
+
+#settings > * {
+	opacity: 0;
+	margin: 10px;
+	transition: opacity 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.login-ms {
+	margin: auto;
+	font: 600 15px "Segoe UI Regular";
+	color: #5e5e5e;
+	display: flex;
+	border: 1px #8c8c8c;
+	width: 205px;
+	padding: 6px;
+	background: #ffffff;
+	cursor: pointer;
+	outline: none;
+}
+.login-ms:hover {
+	background: #f8f8f8;
+}
+.login-ms > * {
+	padding: 6px;
+}
+.settings-load-wrapper {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+.settings-loader {
+	border: 8px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 8px solid #3498db;
+	width: 30px;
+	height: 30px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+} 
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+.disable {
+	pointer-events: none;
+	opacity: 0.25 !important;
+}
+
+/** Tab styling */
+.settings-content > * { margin: 10px; }
+.settings-content > input { display: none; }                /* hide radio buttons */
+.settings-content > input + label { display: inline-block; cursor: pointer; } /* show labels in line */
+.settings-content > input ~ .tab { display: none }          /* hide contents */
+/* show contents only for selected tab */
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3{ display: block; }
+.settings-content > input:checked + label {     /* white background for selected tab */
+  border-bottom: 5px solid #ff6b17;
+  padding-bottom: 8px;
+}
+.tab {
+	padding: 15px;
+	margin-top: 15px;
+	background: #fff;
+}
+
+.content1, .content2 {
+	padding: 0px;
+	background: none;
+}
+
+/* General */
+.content1 > div, .content2 > div {
+	padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+	background: #ffffff;
+	margin: 15px 0px 15px 0px;
+    padding: 15px;
+}
+
+/* Employees table */
+table#employees {
+	width: 100%;
+	border-collapse: collapse;
+}
+#employees > thead > tr{
+	border-bottom: 1.5px solid #929292;
+    text-align: left;
+}
+#employees > tfoot > tr:nth-child(2) {
+	/*border-top: 1.5px solid #929292;*/
+}
+#employees > thead  th,  #employees > tfoot th{
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#employees > tfoot tr:first-child > th {
+	padding-right: 30px;
+}
+#employees > tbody > tr > td:nth-child(2) > input {
+    border-bottom: 1px solid #c5c5c5;
+}
+#employees > tfoot input, #employees > tfoot select {
+	width: 100%;
+}
+#employees > tbody input {
+	outline: none;
+	border: none;
+}
+#employees-box ul {
+	display: flex;
+    padding-inline-start: 0px;
+}
+#employees-box li {
+    padding: 6px 12px;
+    list-style: none;
+    border: 1px solid #e8e8e8;
+    margin: 1px;
+	background: #fbfbfb;
+}
+#employees-box li:hover {
+	background: #ffffff;
+}
+#employees-box li.active{
+	background: #e3e3e3;
+}
+#employees-box a {
+	text-decoration: none;
+	color: black;
+}
